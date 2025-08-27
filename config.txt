@@ -1,0 +1,26 @@
+# Telegram API 配置
+api_id=1234567
+api_hash=967fc90f90ajfu1dd7fe0724jm5e28f8
+
+# 默認設置
+default_report_count=100
+default_target_channel=
+default_report_mode=spam
+
+# UI 設置
+theme=dark
+window_width=800
+window_height=600
+
+# 報告設置
+auto_join_channel=true
+delay_between_reports=1
+
+# 語言設置
+language=zh-TW
+
+# 項目信息
+# 原作者: t.me/Mr3rf1
+# 原版項目: https://github.com/Mr3rf1/TelReper
+# 支持者: @asenyeroao-ct
+# 支持者鏈接: https://github.com/asenyeroao-ct 

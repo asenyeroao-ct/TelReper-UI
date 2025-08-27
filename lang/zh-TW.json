@@ -1,0 +1,119 @@
+{
+  "app_title": "Telegram 頻道報告工具",
+  "version": "v2.0",
+  "author": "t.me/Mr3rf1",
+  "github_link": "https://github.com/Mr3rf1/TelReper",
+  "supporter": "@asenyeroao-ct",
+  "supporter_link": "https://github.com/asenyeroao-ct",
+  
+  "tabs": {
+    "main": "主頁",
+    "accounts": "帳戶管理",
+    "settings": "設置",
+    "log": "日誌"
+  },
+  
+  "main_tab": {
+    "target_channel": "🎯 目標頻道",
+    "channel_username": "頻道用戶名:",
+    "channel_placeholder": "輸入頻道用戶名（不含@符號）",
+    "clear": "清除",
+    "report_settings": "⚙️ 報告設置",
+    "report_count": "📊 報告數量:",
+    "report_reason": "🚨 報告原因:",
+    "account_info": "👥 帳戶信息",
+    "refresh": "🔄 刷新",
+    "start_reporting": "🚀 開始報告",
+    "stop_reporting": "⏹️ 停止報告",
+    "ready": "✅ 就緒",
+    "reporting": "🔄 報告中...",
+    "stopping": "⏹️ 停止中...",
+    "completed": "✅ 完成",
+    "stopped": "✅ 已停止"
+  },
+  
+  "accounts_tab": {
+    "add_account": "➕ 添加新帳戶",
+    "phone_number": "📞 電話號碼:",
+    "phone_placeholder": "+1234567890",
+    "add_account_btn": "➕ 添加帳戶",
+    "added_accounts": "📋 已添加的帳戶",
+    "delete_selected": "🗑️ 刪除選中帳戶",
+    "select_all": "☑️ 全選",
+    "deselect": "☐ 取消選擇",
+    "no_accounts": "❌ 未添加任何帳戶",
+    "one_account": "✅ 已添加 1 個帳戶",
+    "multiple_accounts": "✅ 已添加 {count} 個帳戶"
+  },
+  
+  "settings_tab": {
+    "api_settings": "🔑 API設置",
+    "api_id": "🔢 API ID:",
+    "api_hash": "🔐 API Hash:",
+    "show": "顯示",
+    "report_settings": "⚙️ 報告設置",
+    "auto_join_channel": "自動加入目標頻道",
+    "report_interval": "報告間隔(秒):",
+    "save_settings": "💾 保存設置"
+  },
+  
+  "log_tab": {
+    "log_title": "📝 運行日誌",
+    "clear_log": "🗑️ 清除日誌",
+    "export_log": "💾 導出日誌"
+  },
+  
+  "tooltips": {
+    "target_channel": "輸入要報告的Telegram頻道用戶名\n例如：channel_name（不要包含@符號）",
+    "clear_target": "清除目標頻道輸入框的內容",
+    "report_count": "設置每個帳戶要發送的報告數量\n建議設置在10-1000之間",
+    "report_reason": "選擇報告的原因類型\n• spam: 垃圾信息\n• fake_account: 虛假帳戶\n• violence: 暴力內容\n• child_abuse: 兒童虐待\n• pornography: 色情內容\n• geoirrelevant: 地理位置不相關",
+    "phone_number": "輸入Telegram帳戶的電話號碼\n格式：+國家代碼 電話號碼\n例如：+86 13800138000",
+    "add_account": "添加新的Telegram帳戶\n首次添加需要輸入驗證碼",
+    "refresh_accounts": "刷新帳戶列表\n重新掃描sessions目錄中的帳戶文件",
+    "start_reporting": "開始執行報告操作\n確保已添加帳戶並設置目標頻道",
+    "stop_reporting": "停止當前的報告操作\n正在進行的報告將被中斷",
+    "delete_account": "刪除選中的帳戶\n此操作會永久刪除帳戶session文件",
+    "select_all": "選擇所有帳戶\n用於批量操作",
+    "deselect": "取消所有選擇\n清除當前選中的帳戶",
+    "api_id": "輸入您的Telegram API ID\n可在 https://my.telegram.org 獲取",
+    "api_hash": "輸入您的Telegram API Hash\n可在 https://my.telegram.org 獲取",
+    "auto_join": "啟用後，程序會自動加入目標頻道\n如果已加入頻道，此選項不會重複加入",
+    "report_interval": "設置每次報告之間的延遲時間\n建議設置1-5秒，避免被限制",
+    "save_settings": "保存所有設置到配置文件\n設置將在下次啟動時自動載入",
+    "clear_log": "清除所有日誌內容\n此操作不可撤銷",
+    "export_log": "將當前日誌保存到文本文件\n可選擇保存位置和文件名"
+  },
+  
+  "messages": {
+    "account_added": "帳戶 {name} 添加成功！",
+    "invalid_phone": "電話號碼無效！",
+    "add_account_error": "添加帳戶時發生錯誤: {error}",
+    "account_deleted": "帳戶 {name} 刪除成功！",
+    "delete_account_error": "刪除帳戶時發生錯誤: {error}",
+    "settings_saved": "設置已保存！",
+    "settings_error": "設置格式錯誤: {error}",
+    "log_exported": "日誌已導出到: {filename}",
+    "export_error": "導出日誌失敗: {error}",
+    "no_target": "請輸入目標頻道！",
+    "invalid_count": "請輸入有效的報告數量！",
+    "no_accounts": "請先添加帳戶！",
+    "reporting_started": "開始報告頻道: {channel}",
+    "reporting_completed": "報告完成: {message}",
+    "reporting_error": "報告錯誤: {message}",
+    "no_running_task": "當前沒有正在運行的報告任務",
+    "reporting_stopped": "報告已停止"
+  },
+  
+  "errors": {
+    "title": "錯誤",
+    "warning": "警告",
+    "success": "成功",
+    "confirm": "確認",
+    "cancel": "取消"
+  },
+  
+  "confirmations": {
+    "delete_account": "確定要刪除帳戶 {name} 嗎？"
+  }
+} 

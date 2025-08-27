@@ -1,4 +1,4 @@
-colorama
 telethon==1.40.0
-asyncio
-telegram
+colorama==0.4.6
+customtkinter==5.2.2
+pillow==10.2.0 

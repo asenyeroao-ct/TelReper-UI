@@ -1,192 +1,137 @@
-# TelReper - Telegram Channel Reporter
+# Telegram 頻道報告工具
 
-A Python tool for reporting Telegram channels that violate Telegram's Terms of Service using multiple accounts simultaneously.
+一個帶有現代化UI的Telegram頻道報告工具，基於原來的命令行版本改進。
 
-## ⚠️ Disclaimer
+## 🔗 原版項目
 
-This tool is intended for legitimate reporting of channels that violate Telegram's Terms of Service. **Do not use this tool for harassment, spam, or malicious purposes.** The authors are not responsible for any misuse of this software. Use responsibly and in accordance with Telegram's Terms of Service.
+本項目基於 [Mr3rf1/TelReper](https://github.com/Mr3rf1/TelReper) 開發，添加了圖形界面和多語言支持。
 
-## 🚀 Features
+**原版項目特點：**
+- 命令行界面
+- 多帳戶支持
+- 批量報告功能
+- 多種報告原因
+- 會話管理
 
-- **Multi-account support**: Add and manage multiple Telegram accounts
-- **Batch reporting**: Report channels using all configured accounts simultaneously
-- **Multiple report reasons**: Support for various violation types (spam, violence, etc.)
-- **Session management**: Secure session storage for persistent logins
-- **Colorized output**: Easy-to-read console output with color coding
-- **Error handling**: Robust error handling for network issues and invalid inputs
+## 功能特點
 
-## 📋 Requirements
+- 🎨 現代化圖形界面，使用CustomTkinter
+- 🌍 多語言支持（英文、繁體中文、俄文）
+- 📱 多帳戶管理
+- ⚙️ 可配置的API設置
+- 📊 實時進度顯示
+- 📝 詳細的日誌記錄
+- 🔧 靈活的報告設置
+- 💡 智能工具提示
+- 🔗 超連結支持（可點擊跳轉）
 
-- Python 3.7 or higher
-- Telegram API credentials (api_id and api_hash)
-- Valid Telegram account(s) with phone numbers
+## 安裝步驟
 
-## 🛠️ Installation
-
-### Termux (Android)
+### 1. 環境設置
 ```bash
-apt update && apt upgrade
-pkg install python3 python3-pip git -y
-git clone https://github.com/Mr3rf1/TelReper
-cd TelReper
-pip3 install telethon colorama
-python3 reper.py
+# 運行環境設置腳本
+setup.bat
 ```
 
-### Linux (Ubuntu/Debian)
+### 2. 啟動程序
 ```bash
-sudo apt update && sudo apt upgrade
-sudo apt install python3 python3-pip git -y
-git clone https://github.com/Mr3rf1/TelReper
-cd TelReper
-pip3 install telethon colorama
-python3 reper.py
+# 運行啟動腳本
+start.bat
 ```
 
-### Windows
-1. Install Python 3.7+ from [python.org](https://python.org)
-2. Download or clone this repository
-3. Open Command Prompt/PowerShell in the project directory
-4. Run:
-   ```cmd
-   pip install telethon colorama
-   python reper.py
-   ```
+## 使用說明
 
-## 🔧 Setup
+### 主頁
+- **目標頻道**: 輸入要報告的頻道用戶名（不含@）
+- **報告數量**: 設置每個帳戶的報告次數
+- **報告原因**: 選擇報告的原因類型
+- **開始報告**: 點擊開始執行報告操作
 
-1. **Get Telegram API credentials:**
-   - Go to [my.telegram.org](https://my.telegram.org)
-   - Log in with your phone number
-   - Go to "API Development Tools"
-   - Create a new application
-   - Copy your `api_id` and `api_hash`
+### 帳戶管理
+- **添加帳戶**: 輸入電話號碼添加新的Telegram帳戶
+- **帳戶列表**: 查看和管理已添加的帳戶
+- **刪除帳戶**: 選擇並刪除不需要的帳戶
 
-2. **Update API credentials:**
-   - Open `reper.py`
-   - Replace the `api_id` and `api_hash` values with your credentials:
-   ```python
-   api_id = YOUR_API_ID
-   api_hash = 'YOUR_API_HASH'
-   ```
+### 設置
+- **API設置**: 配置Telegram API ID和Hash
+- **報告設置**: 調整自動加入頻道和報告間隔等選項
+- **保存設置**: 保存所有配置到config.txt文件
 
-## 📖 Usage
+### 日誌
+- **實時日誌**: 查看程序運行的詳細日誌
+- **清除日誌**: 清空日誌內容
 
-### Adding Accounts
+## 配置文件
 
-Before reporting, you need to add at least one Telegram account:
+程序使用`config.txt`文件保存設置：
 
-```bash
-python reper.py -an +1234567890
+```ini
+# Telegram API 配置
+api_id=1234567
+api_hash=your_api_hash_here
+
+# 默認設置
+default_report_count=100
+default_target_channel=
+default_report_mode=spam
+
+# UI 設置
+theme=dark
+window_width=800
+window_height=600
+
+# 報告設置
+auto_join_channel=true
+delay_between_reports=1
 ```
 
-Replace `+1234567890` with your actual phone number (include country code).
+## 報告原因類型
 
-### Reporting a Channel
+- `spam` - 垃圾信息
+- `fake_account` - 虛假帳戶
+- `violence` - 暴力內容
+- `child_abuse` - 兒童虐待
+- `pornography` - 色情內容
+- `geoirrelevant` - 地理位置不相關
 
-```bash
-python reper.py -r 100 -t channelname -m spam
-```
+## 注意事項
 
-**Parameters:**
-- `-r, --run`: Number of reports to send
-- `-t, --target`: Target channel username (without @)
-- `-m, --mode`: Report reason (see available reasons below)
+1. **API設置**: 請確保在設置中配置正確的Telegram API ID和Hash
+2. **帳戶安全**: 請妥善保管帳戶session文件
+3. **使用限制**: 請遵守Telegram的使用條款和當地法律法規
+4. **頻率控制**: 建議設置適當的報告間隔，避免被限制
 
-### Available Report Reasons
-
-```bash
-python reper.py -re
-```
-
-**Supported reasons:**
-- `spam` - Spam content
-- `fake_account` - Fake account/impersonation
-- `violence` - Violent content
-- `child_abuse` - Child abuse content
-- `pornography` - Pornographic content
-- `geoirrelevant` - Geographically irrelevant content
-
-### Help
-
-```bash
-python reper.py -h
-```
-
-## 🔧 Command Line Options
-
-| Option | Long Form | Description | Example |
-|--------|-----------|-------------|---------|
-| `-an` | `--add-number` | Add a new account | `-an +1234567890` |
-| `-r` | `--run` | Number of reports to send | `-r 50` |
-| `-t` | `--target` | Target channel (without @) | `-t spamchannel` |
-| `-m` | `--mode` | Report reason | `-m spam` |
-| `-re` | `--reasons` | Show available reasons | `-re` |
-| `-h` | `--help` | Show help message | `-h` |
-
-## 📁 Project Structure
+## 文件結構
 
 ```
-TelReper/
-├── reper.py          # Main application file
-├── sessions/         # Directory for session files (auto-created)
-│   ├── Ac1.session   # Session file for account 1
-│   ├── Ac2.session   # Session file for account 2
-│   └── ...
-└── README.md         # This file
+tg/
+├── main.py              # 原始命令行版本
+├── ui.py                # 主UI程序
+├── config_manager.py    # 配置管理器
+├── telegram_reporter.py # 報告器核心功能
+├── language_manager.py  # 語言管理器
+├── lang/                # 語言文件目錄
+│   ├── en.json         # 英文語言文件
+│   ├── zh-TW.json      # 繁體中文語言文件
+│   └── ru.json         # 俄文語言文件
+├── config.txt           # 配置文件
+├── requirements.txt     # 依賴項列表
+├── setup.bat           # 環境設置腳本
+├── start.bat           # 啟動腳本
+└── README.md           # 說明文檔
 ```
 
-## 🔒 Security Notes
+## 開發者
 
-- Session files contain sensitive authentication data - keep them secure
-- Never share your session files or API credentials
-- The tool stores sessions locally in the `sessions/` directory
-- Each account gets its own session file (Ac1.session, Ac2.session, etc.)
+- 原作者: [t.me/Mr3rf1](https://t.me/Mr3rf1)
+- 原版項目: [Mr3rf1/TelReper](https://github.com/Mr3rf1/TelReper)
+- UI改進: 基於原版本開發，添加圖形界面和多語言支持
 
-## 🐛 Troubleshooting
+## 🤝 支持
 
-### Common Issues
+- 支持者: [@asenyeroao-ct](https://github.com/asenyeroao-ct)
+- 感謝所有為此項目做出貢獻的開發者
 
-**"The phoneNumber was invalid!"**
-- Ensure you include the country code (e.g., +1 for US)
-- Use the format: +[country_code][phone_number]
+## 免責聲明
 
-**"The link of channel was invalid!"**
-- Make sure the channel username is correct
-- Don't include the @ symbol
-- Ensure the channel exists and is public
-
-**Connection errors**
-- Check your internet connection
-- Telegram servers might be temporarily unavailable
-- Try again after a few minutes
-
-### Getting Help
-
-If you encounter issues:
-1. Check the error message carefully
-2. Ensure all requirements are installed
-3. Verify your API credentials are correct
-4. Make sure you have at least one account added
-
-## 🔄 Updates
-
-This tool is compatible with **Telethon 1.40.0** and uses the latest Telegram API methods. The reporting system has been updated to work with Telegram's current API structure.
-
-## 📜 License
-
-This project is provided as-is for educational and legitimate reporting purposes only. Users are responsible for complying with all applicable laws and Telegram's Terms of Service.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please ensure any contributions maintain the tool's legitimate purpose and include appropriate documentation.
-
-## ⭐ Acknowledgments
-
-- Built with [Telethon](https://github.com/LonamiWebs/Telethon) - Python Telegram client library
-- Uses [Colorama](https://github.com/tartley/colorama) for colored terminal output
-- Original concept by [@Mr3rf1](https://t.me/Mr3rf1)
-
----
-
-**Remember: Use this tool responsibly and only for legitimate reporting of Terms of Service violations.**
+本工具僅供學習和研究使用。使用者需要對自己的行為負責，並遵守相關法律法規。開發者不對任何濫用行為承擔責任。 

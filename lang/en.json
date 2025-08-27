@@ -1,0 +1,119 @@
+{
+  "app_title": "Telegram Channel Reporter",
+  "version": "v2.0",
+  "author": "t.me/Mr3rf1",
+  "github_link": "https://github.com/Mr3rf1/TelReper",
+  "supporter": "@asenyeroao-ct",
+  "supporter_link": "https://github.com/asenyeroao-ct",
+  
+  "tabs": {
+    "main": "Main",
+    "accounts": "Account Management",
+    "settings": "Settings",
+    "log": "Log"
+  },
+  
+  "main_tab": {
+    "target_channel": "🎯 Target Channel",
+    "channel_username": "Channel Username:",
+    "channel_placeholder": "Enter channel username (without @ symbol)",
+    "clear": "Clear",
+    "report_settings": "⚙️ Report Settings",
+    "report_count": "📊 Report Count:",
+    "report_reason": "🚨 Report Reason:",
+    "account_info": "👥 Account Information",
+    "refresh": "🔄 Refresh",
+    "start_reporting": "🚀 Start Reporting",
+    "stop_reporting": "⏹️ Stop Reporting",
+    "ready": "✅ Ready",
+    "reporting": "🔄 Reporting...",
+    "stopping": "⏹️ Stopping...",
+    "completed": "✅ Completed",
+    "stopped": "✅ Stopped"
+  },
+  
+  "accounts_tab": {
+    "add_account": "➕ Add New Account",
+    "phone_number": "📞 Phone Number:",
+    "phone_placeholder": "+1234567890",
+    "add_account_btn": "➕ Add Account",
+    "added_accounts": "📋 Added Accounts",
+    "delete_selected": "🗑️ Delete Selected Account",
+    "select_all": "☑️ Select All",
+    "deselect": "☐ Deselect",
+    "no_accounts": "❌ No accounts added",
+    "one_account": "✅ 1 account added",
+    "multiple_accounts": "✅ {count} accounts added"
+  },
+  
+  "settings_tab": {
+    "api_settings": "🔑 API Settings",
+    "api_id": "🔢 API ID:",
+    "api_hash": "🔐 API Hash:",
+    "show": "Show",
+    "report_settings": "⚙️ Report Settings",
+    "auto_join_channel": "Auto-join target channel",
+    "report_interval": "Report Interval (seconds):",
+    "save_settings": "💾 Save Settings"
+  },
+  
+  "log_tab": {
+    "log_title": "📝 Running Log",
+    "clear_log": "🗑️ Clear Log",
+    "export_log": "💾 Export Log"
+  },
+  
+  "tooltips": {
+    "target_channel": "Enter the Telegram channel username to report\nExample: channel_name (do not include @ symbol)",
+    "clear_target": "Clear the target channel input field",
+    "report_count": "Set the number of reports to send per account\nRecommended: 10-1000",
+    "report_reason": "Select the reason for reporting\n• spam: Spam content\n• fake_account: Fake account\n• violence: Violent content\n• child_abuse: Child abuse\n• pornography: Pornographic content\n• geoirrelevant: Geographically irrelevant",
+    "phone_number": "Enter your Telegram account phone number\nFormat: +country_code phone_number\nExample: +86 13800138000",
+    "add_account": "Add a new Telegram account\nFirst time requires verification code",
+    "refresh_accounts": "Refresh account list\nRescan session files in sessions directory",
+    "start_reporting": "Start the reporting operation\nMake sure accounts are added and target channel is set",
+    "stop_reporting": "Stop the current reporting operation\nOngoing reports will be interrupted",
+    "delete_account": "Delete selected account\nThis will permanently delete the account session file",
+    "select_all": "Select all accounts\nFor batch operations",
+    "deselect": "Deselect all\nClear current account selection",
+    "api_id": "Enter your Telegram API ID\nGet it from https://my.telegram.org",
+    "api_hash": "Enter your Telegram API Hash\nGet it from https://my.telegram.org",
+    "auto_join": "When enabled, the program will automatically join the target channel\nIf already joined, this option won't rejoin",
+    "report_interval": "Set the delay between reports\nRecommended: 1-5 seconds to avoid restrictions",
+    "save_settings": "Save all settings to configuration file\nSettings will be loaded automatically on next startup",
+    "clear_log": "Clear all log content\nThis action cannot be undone",
+    "export_log": "Save current log to text file\nYou can choose save location and filename"
+  },
+  
+  "messages": {
+    "account_added": "Account {name} added successfully!",
+    "invalid_phone": "Invalid phone number!",
+    "add_account_error": "Error adding account: {error}",
+    "account_deleted": "Account {name} deleted successfully!",
+    "delete_account_error": "Error deleting account: {error}",
+    "settings_saved": "Settings saved successfully!",
+    "settings_error": "Settings format error: {error}",
+    "log_exported": "Log exported to: {filename}",
+    "export_error": "Export log failed: {error}",
+    "no_target": "Please enter target channel!",
+    "invalid_count": "Please enter valid report count!",
+    "no_accounts": "Please add accounts first!",
+    "reporting_started": "Started reporting channel: {channel}",
+    "reporting_completed": "Reporting completed: {message}",
+    "reporting_error": "Reporting error: {message}",
+    "no_running_task": "No running reporting task",
+    "reporting_stopped": "Reporting stopped"
+  },
+  
+  "errors": {
+    "title": "Error",
+    "warning": "Warning",
+    "success": "Success",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  
+  "confirmations": {
+    "delete_account": "Are you sure you want to delete account {name}?"
+  }
+} 
